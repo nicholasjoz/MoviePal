@@ -64,7 +64,7 @@ $(document).ready(function(){
 				omdbResponse.imdbId=omdbDataResponse.imdbID
 				omdbResponse.imdbRating=omdbDataResponse.imdbRating
 				omdbResponse.imdbVotes=omdbDataResponse.imdbVotes
-				
+				$("#posterBoy").html("<img src='"+omdbResponse.poster+"'/>")
 			});
 		console.log(omdbResponse);
 		/*$.ajax({
@@ -86,10 +86,5 @@ $(document).ready(function(){
   //}).then(function(yelpResponse) {
 	//console.log(yelpResponse);
 	//});
-	console.log(omdbResponse.poster)
-	
-	$("#posterBoy").html("<img src='"+omdbResponse.poster+"'></img>")
-
-
 })
 })
