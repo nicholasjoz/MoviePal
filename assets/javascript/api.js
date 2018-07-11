@@ -1,14 +1,20 @@
 var movieTitle= "";
 
+var omdbData = "http://www.omdbapi.com/?t="+movieTitle+"&apikey=3efbbefc";
+var omdbPoster = "http://img.omdbapi.com/?apikey=3efbbefc&t="+movieTitle;
+var metacritic ="https://api-marcalencc-metacritic-v1.p.mashape.com/search/" +movieTitle+ "/movie";
+var yelp = "https://api.yelp.com/v3/businesses/search/";
 
+console.log("SOMETHING LOADED")
 $(document).ready(function(){
 	$("#searchButton").on("click", function(event){
+		event.preventDefault();
+		console.log("searching");
+		console.log(movieTitle);
 		movieTitle=$("#searchBox").val().trim();
 		//var yelp = "https://api.yelp.com/v3/businesses/search/(movietheaters)";
-		var omdbData = "http://www.omdbapi.com/?t="+movieTitle+"&apikey=3efbbefc";
-		var omdbPoster = "http://img.omdbapi.com/?apikey=3efbbefc&t="+movieTitle;
-		var metacritic ="https://api-marcalencc-metacritic-v1.p.mashape.com/search/" +movieTitle+ "/movie";
-		var yelp = "https://api.yelp.com/v3/businesses/search/";
+	
+
 
 		var omdbResponse={
 			"title":"",
@@ -77,12 +83,15 @@ $(document).ready(function(){
 	console.log(omdbPosterResponse);
   });*/
 
-  $.ajax({
+ /* $.ajax({
 	url: yelp,
 	method: "GET"
   }).then(function(yelpResponse) {
 	console.log(yelpResponse);
 	});
+
+	*/
+
 	
 	//$("#posterBoy").append("<img src='"+omdbResponse.Poster+"'></img>")
 })
