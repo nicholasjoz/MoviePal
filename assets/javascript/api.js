@@ -7,7 +7,7 @@ $(document).ready(function(){
 		//var yelp = "https://api.yelp.com/v3/businesses/search/(movietheaters)";
 		var omdbData = "http://www.omdbapi.com/?t="+movieTitle+"&apikey=3efbbefc";
 		var omdbPoster = "http://img.omdbapi.com/?apikey=3efbbefc&t="+movieTitle;
-		var metacritic ="https://api-marcalencc-metacritic-v1.p.mashape.com/search/" +movieTitle+ "/movie";
+		var metacritic ="http://api.marcalencc.com/metacritic/" +movieTitle+ "/movie";
 		var yelp = "https://api.yelp.com/v3/businesses/search/";
 
 		var omdbResponse={
@@ -36,17 +36,14 @@ $(document).ready(function(){
 		console.log("click success!");
 		console.log(movieTitle);
 		
-		/*$.ajax({
-			url: metacritic,
-			method: "GET"
-		}).then(function(metacriticResponse) {
-			console.log(metacriticResponse);
-		});*/
+
 		$.ajax({
 			url: omdbData,
 			method: "GET"
 			}).then(function(omdbDataResponse) {
 			console.log(omdbDataResponse);
+			
+				//return omdbResponse;
 				omdbResponse.title=omdbDataResponse.Title
 				omdbResponse.year=omdbDataResponse.Year
 				omdbResponse.rated=omdbDataResponse.Rated
@@ -67,9 +64,15 @@ $(document).ready(function(){
 				omdbResponse.imdbId=omdbDataResponse.imdbID
 				omdbResponse.imdbRating=omdbDataResponse.imdbRating
 				omdbResponse.imdbVotes=omdbDataResponse.imdbVotes
-				//return omdbResponse;
+				
 			});
 		console.log(omdbResponse);
+		/*$.ajax({
+			url: metacritic,
+			method: "GET"
+		}).then(function(metacriticResponse) {
+			console.log(metacriticResponse);
+		});*/
 		/*$.ajax({
 	url: omdbPoster,
 	method: "GET"
@@ -77,13 +80,16 @@ $(document).ready(function(){
 	console.log(omdbPosterResponse);
   });*/
 
-  $.ajax({
-	url: yelp,
-	method: "GET"
-  }).then(function(yelpResponse) {
-	console.log(yelpResponse);
-	});
+//  $.ajax({
+	//url: yelp,
+	//method: "GET"
+  //}).then(function(yelpResponse) {
+	//console.log(yelpResponse);
+	//});
+	console.log(omdbResponse.poster)
 	
-	//$("#posterBoy").append("<img src='"+omdbResponse.Poster+"'></img>")
+	$("#posterBoy").html("<img src='"+omdbResponse.poster+"'></img>")
+
+
 })
 })
