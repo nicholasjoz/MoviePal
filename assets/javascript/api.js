@@ -1,4 +1,8 @@
 var movieTitle= "";
+var omdbData = "http://www.omdbapi.com/?t="+movieTitle+"&apikey=3efbbefc";
+var omdbPoster = "http://img.omdbapi.com/?apikey=3efbbefc&t="+movieTitle;
+var metacritic ="https://api-marcalencc-metacritic-v1.p.mashape.com/search/" +movieTitle+ "/movie";
+var yelp = "https://api.yelp.com/v3/businesses/search/";
 
 console.log("SOMETHING LOADED")
 $(document).ready(function(){
@@ -8,10 +12,7 @@ $(document).ready(function(){
 		console.log(movieTitle);
 		movieTitle=$("#searchBox").val().trim();
 		//var yelp = "https://api.yelp.com/v3/businesses/search/(movietheaters)";
-		var omdbData = "http://www.omdbapi.com/?t="+movieTitle+"&apikey=3efbbefc";
-		var omdbPoster = "http://img.omdbapi.com/?apikey=3efbbefc&t="+movieTitle;
-		var metacritic ="https://api-marcalencc-metacritic-v1.p.mashape.com/search/" +movieTitle+ "/movie";
-		var yelp = "https://api.yelp.com/v3/businesses/search/";
+	
 
 		var omdbResponse={
 			"title":"",
