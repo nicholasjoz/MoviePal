@@ -12,15 +12,39 @@
                 <meta name="viewport" content="width=device-width, initial-scale=1">
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css" />
                 <link rel="stylesheet" href="assets/CSS/MPstyle.css">
+                <script
+                    src="https://code.jquery.com/jquery-3.3.1.min.js"
+                    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+                    crossorigin="anonymous">
+                </script>    
+                
             
             </head>
     </head>
     <body>
             <div class="uk-navbar-item searching">
                     <form action="javascript:void(0)">
-                        <input class="uk-input uk-form-width-medium" id="searchbox" type="text" placeholder="Enter Movie Name">
-                        <button class="uk-button uk-button-default" id="searchbutton"><img src="assets/MPLogo.png" width="50" /></button>
+                        <input class="uk-input uk-form-width-medium" id="searchBox" type="text" placeholder="Enter Movie Name">
+                        <button class="uk-button uk-button-default" id="searchButton"><img class = "uk-invisible-small" src="assets/MPLogo.png" width="50" /></button>
                         <!--  <img src="MPLogo" width="100" />-->
                     </form>
                 </div>
+
+                <div class="uk-section uk-section-secondary uk-light">
+                        <div class="uk-container">
+                    
+                            <h3>Enter search terms to begin!</h3>
+                    
+                        <div class="uk-grid-match" uk-grid>
+                            <ul class="uk-list uk-list-striped">
+                            
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <script type="text/js" src="assets/javascript/api.js"></script>
+                
+                
+
     </body>
