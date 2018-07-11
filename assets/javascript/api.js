@@ -1,4 +1,5 @@
 var movieTitle= "";
+
 var omdbData = "http://www.omdbapi.com/?t="+movieTitle+"&apikey=3efbbefc";
 var omdbPoster = "http://img.omdbapi.com/?apikey=3efbbefc&t="+movieTitle;
 var metacritic ="https://api-marcalencc-metacritic-v1.p.mashape.com/search/" +movieTitle+ "/movie";
@@ -13,6 +14,7 @@ $(document).ready(function(){
 		movieTitle=$("#searchBox").val().trim();
 		//var yelp = "https://api.yelp.com/v3/businesses/search/(movietheaters)";
 	
+
 
 		var omdbResponse={
 			"title":"",
@@ -87,7 +89,9 @@ $(document).ready(function(){
   }).then(function(yelpResponse) {
 	console.log(yelpResponse);
 	});
+
 	*/
+
 	
 	//$("#posterBoy").append("<img src='"+omdbResponse.Poster+"'></img>")
 })
